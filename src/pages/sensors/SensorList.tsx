@@ -1,23 +1,21 @@
-import { Link, useLoaderData } from "react-router-dom";
-import LinkMUI from "@mui/material/Link";
-
-export interface SensorItem {
-  id: string;
-  name: string;
-  description: string;
-  coordinates: number[];
-}
+import { useLoaderData } from "react-router-dom";
+import { SensorItem } from "../../types";
+import { Grid, Typography } from "@mui/material";
+import { SensorCard } from "../../components/sensor/SensorCard";
 
 export const SensorList = () => {
   const sensors = useLoaderData();
   return (
-    <span>
-      {(sensors as SensorItem[]).map((sensor) => (
-        <LinkMUI component={Link} to={`/sensor-${sensor.id}`} key={sensor.id}>
-          {sensor.name}
-        </LinkMUI>
-      ))}
-    </span>
+    <>
+      <Typography variant="h3" component="h1">
+        Sensor List
+      </Typography>
+      <Grid container spacing={3} sx={{ mt: 1, width: "100%" }}>
+        {(sensors as SensorItem[]).map((sensor) => (
+          <SensorCard sensor={sensor} key={sensor.id} />
+        ))}
+      </Grid>
+    </>
   );
 };
 

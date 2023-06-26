@@ -6,7 +6,7 @@ import {
 import { SensorList, sensorsLoader } from "./pages/sensors/SensorList";
 import { Sensor, sensorLoader } from "./pages/sensors/Sensor";
 import { NotFound } from "./pages/NotFound";
-import { Layout } from "./components/Layout";
+import { Layout } from "./components/layout/Layout";
 import { SensorError } from "./pages/sensors/SensorError";
 import { SensorsError } from "./pages/sensors/SensorsError";
 

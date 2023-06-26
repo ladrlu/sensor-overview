@@ -1,6 +1,8 @@
 import { useLoaderData, Params } from "react-router-dom";
-import { SensorItem } from "./SensorList";
-import { Breadcrumbs } from "../../components/Breadcrumbs";
+
+import { Paper, Typography } from "@mui/material";
+import { SensorItem } from "../../types";
+import { GoBack } from "../../components/navigation/GoBack";
 
 export const Sensor = () => {
   const sensor = useLoaderData();
@@ -8,19 +10,28 @@ export const Sensor = () => {
 
   return (
     <>
-      <Breadcrumbs lastCrumb={sensorItem.name} />
-      <span>Sensor {sensorItem.name}</span>
+      <GoBack sx={{ mb: 2 }}>Go back to list</GoBack>
+      <Paper sx={{ p: 3 }}>
+        <Typography variant="h3" component="h1">
+          {sensorItem.name}
+        </Typography>
+        <Typography variant="h5" component="h2" mt={2}>
+          Coordinates:
+        </Typography>
+        <Typography variant="body1" component="div" mb={2}>
+          <strong>lat:</strong> {sensorItem.coordinates[0]} <br />
+          <strong>long:</strong> {sensorItem.coordinates[1]}
+        </Typography>
+      </Paper>
     </>
   );
 };
 
 export const sensorLoader = async ({ params }: { params: Params }) => {
   const { id } = params;
-
   const res = await fetch(
     `${process.env.REACT_APP_API_URL}/sensors/${id?.replace("sensor-", "")}`
   );
-
   if (!res.ok) {
     throw Error("Data not loaded");
   }
