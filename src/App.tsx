@@ -1,13 +1,8 @@
-import { Typography } from "@mui/material";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Router";
 
 function App() {
-  return (
-    <div className="App">
-      <Typography variant="h1" component="h1">
-        New App
-      </Typography>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

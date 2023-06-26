@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <ThemeProvider theme={theme}>
     <Helmet>
-      <title>Sesor</title>
+      <title>Sensor Overview</title>
     </Helmet>
     <CssBaseline />
     <App />
