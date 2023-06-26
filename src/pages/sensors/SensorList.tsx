@@ -22,7 +22,7 @@ export const SensorList = () => {
 };
 
 export const sensorsLoader = async () => {
-  const res = await fetch("http://localhost:8000/sensors");
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/sensors`);
   if (!res.ok) {
     throw Error("Data not loaded");
   }

@@ -18,7 +18,7 @@ export const sensorLoader = async ({ params }: { params: Params }) => {
   const { id } = params;
 
   const res = await fetch(
-    `http://localhost:8000/sensors/${id?.replace("sensor-", "")}`
+    `${process.env.REACT_APP_API_URL}/sensors/${id?.replace("sensor-", "")}`
   );
 
   if (!res.ok) {
