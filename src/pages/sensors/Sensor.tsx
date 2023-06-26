@@ -3,6 +3,7 @@ import { useLoaderData, Params } from "react-router-dom";
 import { Paper, Typography } from "@mui/material";
 import { SensorItem } from "../../types";
 import { GoBack } from "../../components/navigation/GoBack";
+import { SensorMap } from "../../components/sensor/SensorMap";
 
 export const Sensor = () => {
   const sensor = useLoaderData();
@@ -10,7 +11,7 @@ export const Sensor = () => {
 
   return (
     <>
-      <GoBack sx={{ mb: 2 }}>Go back to list</GoBack>
+      <GoBack sx={{ mb: 2 }}>Go back to the list</GoBack>
       <Paper sx={{ p: 3 }}>
         <Typography variant="h3" component="h1">
           {sensorItem.name}
@@ -19,9 +20,10 @@ export const Sensor = () => {
           Coordinates:
         </Typography>
         <Typography variant="body1" component="div" mb={2}>
-          <strong>lat:</strong> {sensorItem.coordinates[0]} <br />
-          <strong>long:</strong> {sensorItem.coordinates[1]}
+          <strong>lat:</strong> {sensorItem.coordinates[1]} <br />
+          <strong>long:</strong> {sensorItem.coordinates[0]}
         </Typography>
+        <SensorMap coordinates={sensorItem.coordinates} />
       </Paper>
     </>
   );
