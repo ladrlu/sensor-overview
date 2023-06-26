@@ -8,7 +8,7 @@ import { Sensor, sensorLoader } from "./pages/sensors/Sensor";
 import { NotFound } from "./pages/NotFound";
 import { Layout } from "./components/layout/Layout";
 import { SensorError } from "./pages/sensors/SensorError";
-import { SensorsError } from "./pages/sensors/SensorsError";
+import { SensorListError } from "./pages/sensors/SensorListError";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,7 +17,7 @@ export const router = createBrowserRouter(
         index
         element={<SensorList />}
         loader={sensorsLoader}
-        errorElement={<SensorsError />}
+        errorElement={<SensorListError />}
       />
       <Route
         path="/:id"

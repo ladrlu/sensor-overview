@@ -11,8 +11,8 @@ Make sure you have [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com
 1. Clone the repository:
 
    ```
-   git clone https://github.com/ladrlu/sensor-map.git
-   cd sensor-map
+   git clone https://github.com/ladrlu/sensor-overview.git
+   cd sensor-overview
    ```
 
 2. Install the dependencies:
