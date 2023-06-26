@@ -1,5 +1,4 @@
 import { Link, useRouteError } from "react-router-dom";
-import LinkMUI from "@mui/material/Link";
 import { Button, Typography } from "@mui/material";
 
 export const SensorError = () => {
